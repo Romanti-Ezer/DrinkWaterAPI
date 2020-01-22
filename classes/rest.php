@@ -13,7 +13,7 @@ class Rest
             $message = isset($this->server['CONTENT_TYPE']) ? 'Invalid content-type: ' . $this->server['CONTENT_TYPE'] . '. application/json expected.' : 'Invalid content-type. application/json expected.';
             $this->outputResponse(Response::getMessage(HTTP_BAD_REQUEST), $message, "Error");
         }
-        $url = $request['url'];
+        $url = isset($request['url']) ? $request['url'] : '';
 
         // Clear '/' (slash) in the end
         if(substr($url, -1) == '/')
@@ -40,7 +40,7 @@ class Rest
 
         if (!$routeExists)
         {
-            $this->outputResponse(Response::getMessage(HTTP_NOT_FOUND), 'Invalid route.');
+            $this->outputResponse(Response::getMessage(HTTP_NOT_FOUND), 'Invalid route.', 'Error');
         }
 
         $content = json_decode(trim(file_get_contents("php://input")));
