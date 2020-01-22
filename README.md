@@ -1,6 +1,6 @@
 # Drink Water API
 ## About
-This a basic API with authenticated CRUD operations, receives and outputs JSON, and was developed with PHP, without frameworks.
+This a basic API with authenticated CRUD operations, receives and outputs JSON, and was developed with PHP, without frameworks. Some validations were implemented and the returned HTTP responses are based on default on default, like 200 for Ok, 201 for created, 401 for unauthorized, 404 for not found and so on.
 
 ## How to run in localhost
 * Clone this repository ```git clone https://github.com/Romanti-Ezer/DrinkWaterAPI.git```
@@ -30,7 +30,7 @@ CREATE TABLE `user` (
 </VirtualHost>
 ```
 * **Important**: keep the ```.htaccess``` setting. This file is very important to controll routes.
-* **Important²**: this API is suposed to run in Apache servers. If necessary to run in Nginx, ```nginx.conf``` will need settings
+* **Important²**: this API is suposed to run in Apache servers. If necessary to run in Nginx, ```nginx.conf``` will need settings.
 ## Testing
 I recommend using [Postman](https://www.getpostman.com/) for testing the endpoints.
 Using this program, is very easy to set the HTTP method, header, body and create multiple requests.
